@@ -11,10 +11,6 @@ import java.util.concurrent.CountDownLatch;
 public class RobertsGradientOp extends NullOp {
     @Override
     public BufferedImage filter(BufferedImage src, BufferedImage dest) {
-        if (dest == null) {
-            dest = createCompatibleDestImage(src, src.getColorModel());
-        }
-
         var mainDiagonalOp = new ConvolutionOp(
                 true,
                 new ReflectivePadder(),
